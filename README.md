@@ -56,9 +56,33 @@ CLAHE與AHE都是局部均衡化，也就是把整個圖像分成許多小塊Til
 
 插值可以在不影響結果質量的情況下顯著提高效率。圖像被分割成大小相等的矩形塊，如下圖右側部分所示。 （8列8行共64塊是常見的選擇。）。然後為每個圖塊計算直方圖、CDF 和變換函數。變換函數適用於平鋪中心像素（圖中左側的黑色方塊）。使用最多四個與中心像素最接近的圖塊的轉換函數進行轉換，並通過插值計算出所有其他像素的像素值。大部分圖像（藍色陰影）中的像素使用雙線性插值得到，靠近邊界的像素（綠色陰影）則用線性插值得到，邊角附近的像素（紅色陰影）使用角塊的變換函數進行變換。插值係數反映了像素到最近的圖塊的中心像素之間的位置，因此隨著像素接近圖塊中心，結果是連續的。
 
-### Comparison between Proposal and origin method
+### Experiemental Results
 
+#### Adaptive Histogram Equalization
 
+![](https://i.imgur.com/YEMgBUQ.png)
+
+#### CLAHE with 1 channel 
+
+##### Normal Gray Image
+![](https://i.imgur.com/CQ2e918.png)
+
+##### Foggy Image
+![](https://i.imgur.com/K8D7rVX.png)
+
+![](https://i.imgur.com/m0ULy8A.png)
+
+#### CLAHE with 3 channel
+![](https://i.imgur.com/B2fY4P9.png)
+
+##### Foggy Image
+![](https://i.imgur.com/PaSktg7.png)
+
+##### Normal Image
+![](https://i.imgur.com/BeVrTs5.png)
+
+#### Comparison Enhancement between HE and CLAHE method on 3 Channel image
+![](https://i.imgur.com/OXxhmUh.jpg)
 
 ### References
 [1] https://zh.wikipedia.org/wiki/%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1%E5%8C%96
